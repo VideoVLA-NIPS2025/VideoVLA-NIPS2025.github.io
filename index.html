@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="VideoVLA: Video Generators Can Be Generalizable Robot Manipulators">
+  <meta name="keywords" content="VLA,Robotics,Video Generation,VideoVLA">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VideoVLA: Video Generators Can Be Generalizable Robot Manipulators</title>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!--<link rel="icon" href="./static/images/favicon.svg">-->
+
+  <script src="./static/js/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <style>
+      ol {
+          padding-left: 40px; /* Adds padding on the left side of the ordered list */
+      }
+      li {
+          padding-left: 20px; /* Adds padding to each list item */
+      }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title"><span
+                style="font-family: 'Courier New', Courier, monospace; font-size: 115%;">VideoVLA</span>:<br><span
+                style="font-size:2.22rem;">Video Generators Can Be Generalizable Robot Manipulators</span></h1>
+            <!-- TODO: add author homepage -->
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <!-- <a href="">Yichao Shen</a><sup>*,1</sup>, -->
+                Yichao Shen<sup>1,2,†</sup>,
+              </span>
+              <span class="author-block">
+                <!-- <a href="">Fangyun Wei</a><sup>1</sup>, -->
+                Fangyun Wei<sup>2,‡</sup>,
+              </span>
+              <span class="author-block">
+                <!-- <a href="">Yichao Shen</a><sup>*,1</sup>, -->
+                Zhiying Du<sup>3,†</sup>,
+              </span>
+              <span class="author-block">
+                <!-- <a href="">Yaobo Liang</a><sup>1</sup>, -->
+                Yaobo Liang<sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <!-- <a href="">Yan Lu</a><sup>1</sup>, -->
+                Yan Lu<sup>2</sup>,
+              </span>
+              <br>
+              <span class="author-block">
+                <!-- <a href="">Jiaolong Yang</a><sup></sup>, -->
+                Jiaolong Yang<sup>2,‡</sup>,
+              </span>
+              <span class="author-block">
+                <!-- <a href="">Jiaolong Yang</a><sup></sup>, -->
+                Nanning Zheng<sup>1,‡</sup>,
+              </span>
+              <span class="author-block">
+                <!-- <a href="">Beining Guo</a><sup></sup> -->
+                Baining Guo<sup>1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <font size="-0.4"><sup>†</sup>Interns at Microsoft Research &nbsp;</font>
+              </span>
+              <span class="author-block">
+                <font size="-0.4"><sup>‡</sup>Corresponding Authors</font>
+              </span><br>
+
+
+              <span class="author-block"><sup>1</sup>IAIR, Xi'an Jiaotong University&nbsp;</span>
+              <span class="author-block"><sup>2</sup>Microsoft Research Asia&nbsp;</span>
+              <span class="author-block"><sup>3</sup>Fudan University&nbsp;</span>
+            </div>
+
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark"  target="_blank">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Model Link. -->
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark"  target="_blank">
+                    <span class="icon">
+                      🤗
+                    </span>
+                    <span>Model</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="static/image/teaser.png" />
+        <div class="content has-text-justified">
+          <p>
+            We present VideoVLA, a simple
+            approach that explores the potential of directly transforming large video generation
+            models into robotic VLA manipulators. Given a language instruction and an image,
+            <i>VideoVLA predicts an action sequence as well as the future visual outcomes.</i>
+            Built on a multi-modal Diffusion Transformer, VideoVLA jointly models video,
+            language, and action modalities, <i>using pre-trained video generative models</i> for joint
+            visual and action forecasting. Our experiments show that high-quality imagined
+            futures correlate with reliable action predictions and task success, highlighting
+            the importance of visual imagination in manipulation. VideoVLA demonstrates
+            strong <i>generalization</i>, including imitating other embodiments’ skills and handling
+            novel objects. This dual-prediction strategy—forecasting both actions and their
+            visual consequences—explores a paradigm shift in robot learning and unlocks
+            generalization capabilities in manipulation systems.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="column is-full-width">
+        <h3 class="title is-3">Motivation</h3>
+
+        <div class="content has-text-justified has-text-centered">
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="15%"></td>
+              <td width="70%">
+                <img src="static/image/alignment.png" />
+                <p class="has-text-centered"> Alignment between video generator and robot manipulator. </p>
+              </td>
+              <td width="15%"></td>
+            </tr>
+          </table>
+          <p>
+            We found that There are three dimensions of alignment between video generator and robot manipulator. Firstly, the situation of video generators handling novel text and novel image conditions shows a natural alignment with that of robot manipulators dealing with unseen instructions and unseen observations. Secondly, the understanding of physical dynamics learned by video generators is also a fundamental capability required for any high-performing robotic manipulator to reason about the physical consequences of their generated actions. Furthermore, video generators can predict future world states by following given instructions, which inherently reflects a planning capability that is also crucial for robotic manipulation models to anticipate and organize their interactions with the physical environment. Motivated by these observations, we aim to explore the following question:
+            <strong><em>"Can large video generators be seamlessly adapted into generalizable robotic manipulators?"</em></strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="column is-full-width">
+        <h3 class="title is-3">The VideoVLA Model</h3>
+
+        <div class="content has-text-justified has-text-centered">
+          <img src="static/image/model.png" />
+          <p class="has-text-centered"> VideoVLA model architecture. </p>
+          <p>
+            Our core idea is to leverage the cognitive information extracted by powerful VLMs to guide the action prediction of a specialized action module. CogACT-VLA has three componentized modules:
+          <ul>
+            <li><b>Pretrained Video Generator Backbone</b>: Our model's DiT backbone is built upon <a href="https://github.com/zai-org/CogVideo" target="_blank">CogVideoX</a> one of the most powerful video generation models. The use of pre-trained video generation models, which enable the system to interpret language instructions and generate plausible imagined futures</li>
+            <li><b>Dual-Prediction Strategy</b>:  VideoVLA jointly predicts the future actions and generates the corresponding future visual contents that would result from executing these ions in the current environment, supervised by a DDPM Diffusion loss. VideoVLA’s dual-prediction strategy fosters a strong correlation between predicted actions and their corresponding visual consequences.</li>
+            <li><b>Unified Future Modeling</b>: All modalities are projected into the token representations with a common embedding dimension, which leverage the advantages of unified DiT architecture. </li>
+          </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="column is-full-width">
+        <h3 class="title is-3" style="margin-top: -30pt;">Experimental Results</h3>
+
+        <div class="column is-full-width">
+        <h3 class="title is-4">Evaluation in Simulation</h3>
+        <h3 class="title is-5">In-domain Evaluation</h3>
+          <p>
+            We evaluate VideoVLA in the <a href="https://github.com/simpler-env/SimplerEnv" target="_blank">SIMPLER</a> evaluation
+            environment for test the VideoVLA performance in in-domain tasks. SIMPLER offers two evaluation protocols—Visual Matching (VM) and Variant Aggregation (VA)—to assess the performance of models using the Google robot and WidowX robot.
+          <p>
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="12%"></td>
+              <td width="76%">
+                <img src="static/image/SIMPLER_indomain.png" />
+                <p class="has-text-centered" style="margin-top: -0.5em;">  <span style="font-size: 95%;">In-domain evaluation of VideoVLA and prior VLA models using the WidowX robot and Google robot within the SIMPLER simulation environment. All models are trained on the OXE dataset.</span></p>
+              </td>
+              <td width="12%"></td>
+            </tr>
+          </table>
+        </div>
+
+        
+        <div class="column is-full-width">
+        <h4 class="title is-5" style="width: 100%;"><span style="font-size: 90%;">Visualization of Predicted Action and Video</span></h4>
+        <strong>"Predicted Action"</strong> shows the visual results of the actions predicted by the VideoVLA during task completion, while <strong>"Predicted Video"</strong> refer to the model's corresponding video prediction.
+        </div>
+
+        <div class="column is-full-width">
+        <h4 class="title is-6" style="width: 100%;">Google Robot</span></h4>
+        </div>
+        <div class="content has-text-justified has-text-centered">
+          <div class="columns is-vcentered interpolation-panel">
+            <div class="column  has-text-centered">
+              <h6>Pick coke can.</h6>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="static/videonew/simulator/indomain/Pick_coke_can.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column  has-text-centered">
+              <h6>Move 7up can near apple.</h6>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="static/videonew/simulator/indomain/Move_7up_can_near_apple.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <div class="columns is-vcentered interpolation-panel">
+            <div class="column  has-text-centered">
+              <h6>Close middle drawer.</h6>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="static/videonew/simulator/indomain/close_middle_drawer.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column  has-text-centered">
+              <h6>Move orange near pepsi can.</h6>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="static/videonew/simulator/indomain/Move_orange_near_pepsi_can.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="column is-full-width">
+        <h4 class="title is-6" style="width: 100%;">WidowX Robot</span></h4>
+        </div>
+        <div class="content has-text-justified has-text-centered">
+          <div class="columns is-vcentered interpolation-panel">
+            <div class="column  has-text-centered">
+              <h6>Put carrot on plate.</h6>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="static/videonew/simulator/indomain/widowx_put_carrot_on_plate.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column  has-text-centered">
+              <h6>Put eggplant into yellow basket.</h6>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="static/videonew/simulator/indomain/widowx_put_eggplant_to_basket.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <div class="columns is-vcentered interpolation-panel">
+            <div class="column  has-text-centered">
+              <h6>Put the spoon on the towel.</h6>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="static/videonew/simulator/indomain/widowx_put_the_spoon_on_the_towel.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column  has-text-centered">
+              <h6>Stack the green block on the yellow block.</h6>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="static/videonew/simulator/indomain/widowx_stack_block.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="column is-full-width">
+        <h3 class="title is-5">Novel Objects Evaluation</h3>
+          <p>
+            We select objects from the other 3D asset datasets, including YCB and GSO, that are not present in the Google robot’s training data and import them into the SIMPLER environment. We evaluate VideoVLA on the “Pick Up” skill using the Google robot with 10 novel objects.
+          <p>
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="12%"></td>
+              <td width="76%">
+                <img src="static/image/SIMPLER_newobject.png" />
+                <p class="has-text-centered" style="margin-top: -0.5em;">  <span style="font-size: 95%;">Evaluation of generalization to novel objects using the Google robot under the SIMPLER environment.</span></p>
+              </td>
+              <td width="12%"></td>
+            </tr>
+          </table>
+        </div>
+
+
+        <div class="column is-full-width">
+        <h4 class="title is-5" style="width: 100%;"><span style="font-size: 90%;">Visualization of Predicted Action and Video</span></h4>
+        <strong>"Predicted Action"</strong> shows the visual results of the actions predicted by the VideoVLA during task completion, while <strong>"Predicted Video"</strong> refer to the model's corresponding video prediction.
+        </div>
+
+        <div class="content has-text-justified has-text-centered">
+          <div class="columns is-vcentered interpolation-panel">
+            <div class="column  has-text-centered">
+              <h6>Pick up <span style="color: rgb(0, 60, 255);">eggplant</span>.</h6>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="static/videonew/simulator/novelobject/pick_up_eggplant.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column  has-text-centered">
+              <h6>Pick up <span style="color: rgb(0, 60, 255);">plum</span>.</h6>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="static/videonew/simulator/novelobject/pick_up_plum.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <div class="columns is-vcentered interpolation-panel">
+            <div class="column  has-text-centered">
+              <h6>Pick up <span style="color: rgb(0, 60, 255);">strawberry</span>.</h6>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="static/videonew/simulator/novelobject/pick_up_strawberry.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column  has-text-centered">
+              <h6>Pick up <span style="color: rgb(0, 60, 255);">wrench</span>.</h6>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="static/videonew/simulator/novelobject/pick_up_wrench.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-full-width">
+        <h3 class="title is-5">Skills Transfer Evaluation</h3>
+          <p>
+           VideoVLA is trained on the OXE dataset, which includes a diverse set of embodiments, each potentially associated with a distinct, non-overlapping set of skills. To assess skill generalization, we evaluate the model’s ability to <strong>transfer skills from the WidowX robot to the Google robot.</strong>
+          <p>
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="12%"></td>
+              <td width="76%">
+                <img src="static/image/SIMPLER_skilltransfer.png" />
+                <p class="has-text-centered" style="margin-top: -0.5em;">  <span style="font-size: 95%;">Evaluation of generalization to Skills Transfer using the Google robot within the SIMPLER environment. The new skills are transferred from the WidowX robot, as they are present in its training data but absent from the Google robot’s training set. <span style="font-size: 90%;">{L,R,U,B} denotes {Left, Right, Upper, Bottom}.</span></span></p>
+              </td>
+              <td width="12%"></td>
+            </tr>
+          </table>
+        </div>
+
+
+        <div class="column is-full-width">
+        <h4 class="title is-5" style="width: 100%;"><span style="font-size: 90%;">Visualization of Predicted Action and Video</span></h4></div>
+        <div class="column is-full-width">
+        <strong>"Predicted Action"</strong> shows the visual results of the actions predicted by the VideoVLA during task completion, while <strong>"Predicted Video"</strong> refer to the model's corresponding video prediction.
+        </div>
+
+        <div class="content has-text-justified has-text-centered">
+          <div class="columns is-vcentered interpolation-panel">
+            <div class="column  has-text-centered">
+              <h6>Stack the green block on the yellow block.<span style="color: rgb(76, 0, 255); font-size: 80%;">(from WidowX)</span></h6>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="static/videonew/simulator/skilltransfer/stack_block.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column  has-text-centered">
+              <h6>Take out of apple.<span style="color: rgb(76, 0, 255); font-size: 80%;">(from WidowX)</span></h6>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="static/videonew/simulator/skilltransfer/take_out_of_apple.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <div class="columns is-vcentered interpolation-panel">
+            <div class="column  has-text-centered">
+              <h6>Put carrot on plate.<span style="color: rgb(76, 0, 255); font-size: 80%;">(from WidowX)</span></h6>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="static/videonew/simulator/skilltransfer/put_carrot_on_plate.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column  has-text-centered">
+              <h6>Put the spoon on the towel.<span style="color: rgb(76, 0, 255); font-size: 80%;">(from WidowX)</span></h6>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="static/videonew/simulator/skilltransfer/put_the_spoon_on_the_towel.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="column is-full-width">
+          <h3 class="title is-4">Evaluation in Real-World</h3>
+          <p>
+            We evaluate VideoVLA with a Realman robot, which is equipped with a 7-DoF arm and a gripper, to perform real-world tasks such as picking, stacking, and placing. All models are finetuned on our collected dataset using the Realman robot.
+          </p>
+          <div class="column is-full-width">
+            <h3 class="title is-5">In-Domain Evaluation.</h3>
+              <p>
+                  For real-world in-domain evaluation, we assess performance on three tasks:
+              </p>
+              <ol>
+                  <li>Pick up the [Object] and place it onto the [Color] plate, where Object ∈ {Banana, Lemon, Avocado}, and Color ∈ {White, Blue, Yellow};</li>
+                  <li>Stack the [Color] [Object] into the [Color] [Object], where Object ∈ {Cup, Bowl} and Color ∈ {Pink, White, Blue, Yellow};</li>
+                  <li>Place the [Color] block onto the [Color] block, where Color ∈ {Red, Orange, Blue, Green, Yellow}.</li>
+              </ol>
+              <p>
+                  To increase task difficulty, we introduce novel distractor objects into the scene.
+              </p>
+          
+          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="12%"></td>
+              <td width="76%">
+                <img src="static/image/REAL_indomain.png" />
+                <p class="has-text-centered" style="margin-top: -0.5em;">  <span style="font-size: 95%;">Real-world in-domain evaluation using the Realman robot. All models are pre-trained on the OXE dataset and subsequently fine-tuned on our collected dataset. </span></span></p>
+              </td>
+              <td width="12%"></td>
+            </tr>
+          </table>
+          </div>
+
+          <div class="column is-full-width">
+            <h3 class="title is-5">Novel Objects Evaluation.</h3>
+              <p>
+                  Using the Realman robot, we perform the task: “Pick up the [Novel Object] and place it onto the [Color] plate”, where each Novel Object is chosen from a set of novel objects not seen during finetuneing.
+              </p>
+            <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="12%"></td>
+                <td width="76%">
+                  <img src="static/image/REAL_newobject.png" />
+                  <p class="has-text-centered" style="margin-top: -0.5em;">  <span style="font-size: 95%;">Evaluation of real-world generalization to novel objects using the Realman robot. </span></span></p>
+                </td>
+                <td width="12%"></td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="column is-full-width">
+            <h3 class="title is-5">Skills Transfer Evaluation.</h3>
+              <p>
+                  In this experiment, we train our model and all baseline models on a combined dataset consisting of the WidowX Robot set and our own collected dataset. To evaluate skill transfer, we focus on skills that are observed by the WidowX robot during training but never demonstrated by the Realman robot.
+              </p>
+            <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="12%"></td>
+                <td width="76%">
+                  <img src="static/image/REAL_skilltransfer.png" />
+                  <p class="has-text-centered" style="margin-top: -0.5em;">  <span style="font-size: 95%;">Evaluating real-world cross-embodiment skill transfer: our Realman robot performs novelskills learned only by the WidowX robot. </span></span></p>
+                </td>
+                <td width="12%"></td>
+              </tr>
+            </table>
+          </div>
+
+        <div class="column is-full-width">
+        <h4 class="title is-5" style="width: 100%;">Visualization of Predicted Action and Video</span></h4></div>
+        <div class="column is-full-width">
+        <strong>"Predicted Action"</strong> shows the visual results of the actions predicted by the VideoVLA during task completion, while <strong>"Predicted Video"</strong> refer to the model's corresponding video prediction.
+        </div>
+
+        <div class="content has-text-justified has-text-centered">
+          <div class="columns is-vcentered interpolation-panel">
+            <div class="column  has-text-centered">
+              <h6>Pick up the white cup.</span></h6>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="static/videonew/real/indomain/Pick up the white cup.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="column  has-text-centered">
+              <h6>Put the blue ball into pink bowl.</h6>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="static/videonew/real/newobject/Put the blue ball into pink bowl.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+          <div class="columns is-vcentered interpolation-panel">
+            <div class="column  has-text-centered">
+              <h6>Move the blue block near the red block.</span></h6>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="static/videonew/real/newskill/move_the_blue_block_near_the_red_block,_with_Robot.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="column  has-text-centered">
+              <h6>Take the blue block out of plate.</span></h6>
+              <video autoplay="" controls="" muted="" loop="" playsinline="" width="100%">
+                <source src="static/videonew/real/newskill/take_the_blue_block_out_of_plate.,_with_Robot.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+
+        </div>
+
+
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre>
+<code>@article{
+    videovla,
+    title={VideoVLA: Video Generators Can Be Generalizable Robot Manipulators},
+    author={Yichao Shen and Fangyun Wei and Zhiying Du and Yaobo Liang and Yan Lu and Jiaolong Yang and Nanning Zheng and Baining Guo},
+    booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems(NeurIPS2025)},
+    year={2025},
+    url={https://openreview.net/forum?id=UPHlqbZFZB}
+    }
+  </code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p> Website adapted from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> under a <a
+                href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
+                International</a>
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>
