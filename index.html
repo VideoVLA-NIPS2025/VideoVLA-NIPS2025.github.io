@@ -112,7 +112,7 @@
               <div class="publication-links">
                 <!-- PDF Link. -->
                 <span class="link-block">
-                  <a href="" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <a href="https://openreview.net/pdf?id=UPHlqbZFZB" class="external-link button is-normal is-rounded is-dark" target="_blank">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                     </span>
@@ -216,9 +216,9 @@
           <p>
             Our core idea is to leverage the cognitive information extracted by powerful VLMs to guide the action prediction of a specialized action module. CogACT-VLA has three componentized modules:
           <ul>
-            <li><b>Pretrained Video Generator Backbone</b>: Our model's DiT backbone is built upon <a href="https://github.com/zai-org/CogVideo" target="_blank">CogVideoX</a> one of the most powerful video generation models. The use of pre-trained video generation models, which enable the system to interpret language instructions and generate plausible imagined futures</li>
-            <li><b>Dual-Prediction Strategy</b>:  VideoVLA jointly predicts the future actions and generates the corresponding future visual contents that would result from executing these ions in the current environment, supervised by a DDPM Diffusion loss. VideoVLA’s dual-prediction strategy fosters a strong correlation between predicted actions and their corresponding visual consequences.</li>
-            <li><b>Unified Future Modeling</b>: All modalities are projected into the token representations with a common embedding dimension, which leverage the advantages of unified DiT architecture. </li>
+            <li><b>Pretrained Video Generator Backbone</b>: Our model's DiT backbone is built upon <a href="https://github.com/zai-org/CogVideo" target="_blank">CogVideoX</a> one of the most powerful video generation models. The use of pre-trained video generation models enables the system to interpret language instructions and generate plausible imagined futures</li>
+            <li><b>Dual-Prediction Strategy</b>:  VideoVLA jointly predicts the future actions and generates the corresponding future visual contents that would result from executing these actions in the current environment, supervised by a DDPM Diffusion loss. VideoVLA’s dual-prediction strategy fosters a strong correlation between predicted actions and their corresponding visual consequences.</li>
+            <li><b>Unified Future Modeling</b>: All modalities are projected into the shared token representations with a common embedding dimension, leveraging the advantages of unified DiT architecture. </li>
           </ul>
           </p>
         </div>
@@ -232,11 +232,54 @@
         <h3 class="title is-3" style="margin-top: -30pt;">Experimental Results</h3>
 
         <div class="column is-full-width">
+          <h3 class="title is-4">Summary Results</h3>
+            <div class="column is-full-width">
+              <p>
+                On in-domain tasks, VideoVLA demonstrates strong performance, and further exhibits robust generalization capabilities, including the ability to emulate the new skills transferred from other embodiments and to manipulate previously unseen novel objects.
+              </p>
+            </div>
+              <div class="content has-text-justified has-text-centered">
+                <div class="columns is-vcentered interpolation-panel">
+                  <div class="column has-text-centered">
+                    <h6>In-domain</h6>
+                    <img src="static/image/result_graph/VIDEOVLA_Simulation_Indomain.png" width="100%">
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <h6>Generalization to <span style="color: rgb(76, 0, 255);">Novel Objects</span></h6>
+                    <img src="static/image/result_graph/VIDEOVLA_Simulation_novel_object.png"  width="100%">
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <h6>Generalization to <span style="color: rgb(76, 0, 255);">New Skills Transfer</span></h6>
+                    <img src="static/image/result_graph/VIDEOVLA_Simulation_New_Skills_Transfer.png"  width="100%">
+                  </div>
+                </div>
+                <div class="columns is-vcentered interpolation-panel">
+                  <div class="column has-text-centered">
+                    <img src="static/image/result_graph/VIDEOVLA_Real_Indomain.png"  width="100%">
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <img src="static/image/result_graph/VIDEOVLA_Real_novel_object.png"  width="100%">
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <img src="static/image/result_graph/VIDEOVLA_Real_New_Skills_Transfer.png"  width="100%">
+                  </div>
+                </div>
+
+              </div>
+
+
+        </div>
+
+        <div class="column is-full-width">
         <h3 class="title is-4">Evaluation in Simulation</h3>
         <h3 class="title is-5">In-domain Evaluation</h3>
           <p>
             We evaluate VideoVLA in the <a href="https://github.com/simpler-env/SimplerEnv" target="_blank">SIMPLER</a> evaluation
-            environment for test the VideoVLA performance in in-domain tasks. SIMPLER offers two evaluation protocols—Visual Matching (VM) and Variant Aggregation (VA)—to assess the performance of models using the Google robot and WidowX robot.
+            environment for testing the VideoVLA performance on in-domain tasks. SIMPLER offers two evaluation protocols—Visual Matching (VM) and Variant Aggregation (VA)—to assess the performance of models using the Google robot and WidowX robot.
           <p>
           <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
             <tr>
@@ -253,7 +296,7 @@
         
         <div class="column is-full-width">
         <h4 class="title is-5" style="width: 100%;"><span style="font-size: 90%;">Visualization of Predicted Action and Video</span></h4>
-        <strong>"Predicted Action"</strong> shows the visual results of the actions predicted by the VideoVLA during task completion, while <strong>"Predicted Video"</strong> refer to the model's corresponding video prediction.
+        <strong>"Predicted Action"</strong> shows the visual results of the actions predicted by the VideoVLA during task completion, while <strong>"Predicted Video"</strong> refers to the model's corresponding video prediction.
         </div>
 
         <div class="column is-full-width">
@@ -334,7 +377,7 @@
         <div class="column is-full-width">
         <h3 class="title is-5">Novel Objects Evaluation</h3>
           <p>
-            We select objects from the other 3D asset datasets, including YCB and GSO, that are not present in the Google robot’s training data and import them into the SIMPLER environment. We evaluate VideoVLA on the “Pick Up” skill using the Google robot with 10 novel objects.
+            We select objects from the other 3D asset datasets, including YCB and GSO, that are not present in the Google robot’s training data and import them into the SIMPLER environment. We evaluate VideoVLA on the “Pick Up” skill using the Google robot across 10 novel objects.
           <p>
           <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
             <tr>
@@ -351,7 +394,7 @@
 
         <div class="column is-full-width">
         <h4 class="title is-5" style="width: 100%;"><span style="font-size: 90%;">Visualization of Predicted Action and Video</span></h4>
-        <strong>"Predicted Action"</strong> shows the visual results of the actions predicted by the VideoVLA during task completion, while <strong>"Predicted Video"</strong> refer to the model's corresponding video prediction.
+        <strong>"Predicted Action"</strong> shows the visual results of the actions predicted by the VideoVLA during task completion, while <strong>"Predicted Video"</strong> refers to the model's corresponding video prediction.
         </div>
 
         <div class="content has-text-justified has-text-centered">
@@ -388,16 +431,19 @@
         </div>
 
         <div class="column is-full-width">
-        <h3 class="title is-5">Skills Transfer Evaluation</h3>
-          <p>
-           VideoVLA is trained on the OXE dataset, which includes a diverse set of embodiments, each potentially associated with a distinct, non-overlapping set of skills. To assess skill generalization, we evaluate the model’s ability to <strong>transfer skills from the WidowX robot to the Google robot.</strong>
-          <p>
+        <h3 class="title is-5">New Skills Transfer Evaluation</h3>
+          <div class="column is-full-width">
+            <p>
+              VideoVLA is trained on the OXE dataset, which includes a diverse set of embodiments, each potentially associated with a distinct, non-overlapping set of skills. To assess skill generalization, we evaluate the model’s ability to <strong> transfer skills from the WidowX robot to the Google robot</strong>, meaning that these skills are included in the WidowX training data but excluded from the Google robot’s training set.
+            <p>
+          </div>
+
           <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
             <tr>
               <td width="12%"></td>
               <td width="76%">
                 <img src="static/image/SIMPLER_skilltransfer.png" />
-                <p class="has-text-centered" style="margin-top: -0.5em;">  <span style="font-size: 95%;">Evaluation of generalization to Skills Transfer using the Google robot within the SIMPLER environment. The new skills are transferred from the WidowX robot, as they are present in its training data but absent from the Google robot’s training set. <span style="font-size: 90%;">{L,R,U,B} denotes {Left, Right, Upper, Bottom}.</span></span></p>
+                <p class="has-text-centered" style="margin-top: -0.5em;">  <span style="font-size: 95%;">Evaluation of generalization to Skills Transfer using the Google robot within the SIMPLER environment. The new skills are transferred from the WidowX robot, as they are present in WidowX robot’s training data but absent from the Google robot’s training set. <span style="font-size: 90%;">{L,R,U,B} denotes {Left, Right, Upper, Bottom}.</span></span></p>
               </td>
               <td width="12%"></td>
             </tr>
@@ -408,7 +454,7 @@
         <div class="column is-full-width">
         <h4 class="title is-5" style="width: 100%;"><span style="font-size: 90%;">Visualization of Predicted Action and Video</span></h4></div>
         <div class="column is-full-width">
-        <strong>"Predicted Action"</strong> shows the visual results of the actions predicted by the VideoVLA during task completion, while <strong>"Predicted Video"</strong> refer to the model's corresponding video prediction.
+        <strong>"Predicted Action"</strong> shows the visual results of the actions predicted by the VideoVLA during task completion, while <strong>"Predicted Video"</strong> refers to the model's corresponding video prediction.
         </div>
 
         <div class="content has-text-justified has-text-centered">
@@ -449,9 +495,9 @@
 
 
         <div class="column is-full-width">
-          <h3 class="title is-4">Evaluation in Real-World</h3>
+          <h3 class="title is-4">Evaluation in Real World</h3>
           <p>
-            We evaluate VideoVLA with a Realman robot, which is equipped with a 7-DoF arm and a gripper, to perform real-world tasks such as picking, stacking, and placing. All models are finetuned on our collected dataset using the Realman robot.
+            We evaluate VideoVLA with a Realman robot, which is equipped with a 7-DoF arm and a gripper, to perform real-world tasks such as picking, stacking, and placing objects. All models are finetuned on our collected dataset using the Realman robot.
           </p>
           <div class="column is-full-width">
             <h3 class="title is-5">In-Domain Evaluation.</h3>
@@ -464,7 +510,7 @@
                   <li>Place the [Color] block onto the [Color] block, where Color ∈ {Red, Orange, Blue, Green, Yellow}.</li>
               </ol>
               <p>
-                  To increase task difficulty, we introduce novel distractor objects into the scene.
+                  To increase task difficulty and test robustness, we introduce novel distractor objects into the scene.
               </p>
           
           <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
@@ -497,9 +543,9 @@
           </div>
 
           <div class="column is-full-width">
-            <h3 class="title is-5">Skills Transfer Evaluation.</h3>
+            <h3 class="title is-5">New Skills Transfer Evaluation.</h3>
               <p>
-                  In this experiment, we train our model and all baseline models on a combined dataset consisting of the WidowX Robot set and our own collected dataset. To evaluate skill transfer, we focus on skills that are observed by the WidowX robot during training but never demonstrated by the Realman robot.
+                  In this experiment, we train our model and all baseline models on a combined dataset consisting of the WidowX Robot dataset and our own collected dataset. To evaluate skill transfer, we focus on skills that are observed by the WidowX robot during training but never demonstrated by the Realman robot.
               </p>
             <table width="100%" align="center" border="0" cellspacing="0" cellpadding="0">
               <tr>
@@ -516,7 +562,7 @@
         <div class="column is-full-width">
         <h4 class="title is-5" style="width: 100%;">Visualization of Predicted Action and Video</span></h4></div>
         <div class="column is-full-width">
-        <strong>"Predicted Action"</strong> shows the visual results of the actions predicted by the VideoVLA during task completion, while <strong>"Predicted Video"</strong> refer to the model's corresponding video prediction.
+        <strong>"Predicted Action"</strong> shows the visual results of the actions predicted by the VideoVLA during task completion, while <strong>"Predicted Video"</strong> refers to the model's corresponding video prediction.
         </div>
 
         <div class="content has-text-justified has-text-centered">
