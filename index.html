@@ -139,7 +139,7 @@
                 </span>
                 <!-- Model Link. -->
                 <span class="link-block">
-                  <a href="https://github.com/VideoVLA-Project/VideoVLA" class="external-link button is-normal is-rounded is-dark"  target="_blank">
+                  <a href="https://huggingface.co/VideoVLA/VideoVLA_Cogvideobase_Pretrained" class="external-link button is-normal is-rounded is-dark"  target="_blank">
                     <span class="icon">
                       🤗
                     </span>
@@ -215,7 +215,7 @@
           <img src="static/image/model.png" />
           <p class="has-text-centered"> VideoVLA model architecture. </p>
           <p>
-            Our core idea is to leverage the cognitive information extracted by powerful VLMs to guide the action prediction of a specialized action module. CogACT-VLA has three componentized modules:
+            Our core idea is to leverage the cognitive information extracted by powerful VLMs to guide the action prediction of a specialized action module. VideoVLA has three componentized modules:
           <ul>
             <li><b>Pretrained Video Generator Backbone</b>: Our model's DiT backbone is built upon <a href="https://github.com/zai-org/CogVideo" target="_blank">CogVideoX</a> one of the most powerful video generation models. The use of pre-trained video generation models enables the system to interpret language instructions and generate plausible imagined futures</li>
             <li><b>Dual-Prediction Strategy</b>:  VideoVLA jointly predicts the future actions and generates the corresponding future visual contents that would result from executing these actions in the current environment, supervised by a DDPM Diffusion loss. VideoVLA’s dual-prediction strategy fosters a strong correlation between predicted actions and their corresponding visual consequences.</li>
